@@ -84,3 +84,214 @@ Remainder = 21 % 4;  # Modulo (remainder = 1)
 power = 2 ** 3; # Finds the exponent of 2 raised to 3 = 8
 
 ```
+
+## Changing Variables
+
+Variables can be reassigned.
+
+```python
+
+with entry{
+    score = 0;
+    print(score) # prints 0
+
+    score = 10; # value 10 has been reassigned to score variable
+    print(score) # outputs 10
+
+    score += 5
+    print(score) # outputs 15.Just added 5 to the original value of score
+
+}
+```
+
+Common shortcuts:
+
+- x += 5 means x = x + 5 (add 5)
+- - x -= 3 means x = x - 3 (subtract 3)
+- - x \*= 2 means x = x \* 2 (multiply by 2)
+- - x /= 4 means x = x / 4 (divide by 4)
+
+## Control Flow - Making Decisions
+
+Programs need to make decisions based on conditions.
+
+This is where if, elif and else come in.
+
+### The If Statement
+
+A python program that prints 'You are an adult' if your age is above 18.
+
+```python
+
+with entry{
+
+    age = 25;
+    if age >= 18{
+        print("You are an adult");
+    }
+}
+```
+
+How it works: if age >= 18,checks if age is greater than or equal to 18, if this condition
+is satisfied, it prints the statement in the brackets.
+
+### The If...else statement
+
+Now Imagine you want to output an alternative statement, if the first condition isn't met.
+
+```python
+
+age = 10;
+with entry{
+if age >= 18{
+    print("You are an adult");
+} else{
+    print("YOu are a minor");
+}
+}
+```
+
+How it works: This program checks if the age condition is satisfied, that is greater or equal to 18. If not, which is the case, the program checks what is in the else clause and outputs the statement there.
+
+### The If---elif...else statement
+
+Now what if we are checking multiple conditions?
+
+```python
+with entry{
+    score = 85;
+
+    if score >= 90{
+        print("Grade: A");
+    } elif score >= 80 {
+        print("Grade: B");
+
+    } elif score >= 70 {
+        print("Grade: C");
+
+    } elif score >= 60 {
+        print("Grade: D");
+
+    } else{
+        print("Grade: F");
+    }
+}
+```
+
+How it works:
+
+1. Check first if - if True, run its code and skip the rest
+2. If first is False, check first elif
+3. Keep checking until one is True
+4. If none are True, run else block
+
+### Nested Ifs
+
+YOu can put if statements insode other if satements, if you are checking multiple conditions. For example, check if the weather is sunny and temeprature is greater than 75, this makes a perfect day for a nature walk.
+
+```python
+
+with entry{
+
+    weather = 'sunny';
+    temperature = 80;
+
+    if weather = "sunny"{
+        if temperature > 75{
+            print("Perfect day for a nature walk! ");
+        } else {
+            print("Look for a better day. Weather conditions not so good");
+        }
+    } else{
+        print("Maybe Stay Inside");
+    }
+}
+```
+
+## Repeating Loops
+
+Loops let you write multiple code without the need for writing it over and over.
+
+### The While Loop
+
+Repeat code while the condition is true.
+
+```python
+
+with entry{
+    count = 1;
+
+    while count <= 5 {
+        print(f"The count is {count}");
+        count += 1; # Increment the loop or keep counting forever.
+    }
+
+    print("Done!")
+}
+```
+
+N/B: Make sure your condition evaluates to flase or your loop forever.
+
+### The For Loop
+
+Used when you know exactly how many number of times you need to loop.
+
+```python
+
+with entry {
+    # count from 0  - 4
+    for i = 0 to i < 5 by i += 1 {
+        print(i);
+    }
+}
+```
+
+### The For-In Loop (Iterating)
+
+Loop throught the items in a collection.
+
+```python
+with entry{
+    names = [Abel, Allan, Andrew, Francis, James];
+
+    for i in names{
+        print(i);
+    }
+}
+```
+
+### Breaking out of loops
+
+Sometimes you may need to stop a loop early.
+
+Here we use the break keyword.
+
+```python
+with entry {
+    # Find the fisrt number divisible by 7
+    for i = 1 to i <= 100 by i += 1 {
+        if i % 7 == 0{
+            print(f"Found it! It's {i}");
+            break; # exit the loop after the solution is found
+        }
+    }
+}
+```
+
+### Skipping Iterations
+
+Skip to the next iteration without running the rest of the loop body.
+
+```python
+
+with entry{
+    # Print only odd numbers
+
+    for i = 1 to i <= 10 by i += 1{
+        if i % 2 == 0{
+            continue; # Ensures you skip all even numbers.
+        }
+        print(i);
+    }
+}
+```
